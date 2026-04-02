@@ -28,8 +28,8 @@ nav {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { display:flex; align-items:center; }
-.nav-logo-img { height:48px; width:auto; display:block; }
+.nav-logo { display:flex; align-items:center; height:100%; overflow:hidden; }
+.nav-logo-img { height:100px; width:auto; display:block; }
 .nav-links { display:flex; gap:28px; list-style:none; }
 .nav-links a { color: var(--gray-light); font-size:13px; font-weight:500; text-decoration:none; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; }
 .nav-links a:hover { color: var(--red); }
@@ -360,6 +360,7 @@ footer {
 @media(max-width:900px) {
   nav { padding:0 20px; }
   .nav-links { display:none; }
+  .nav-logo-img { height:70px; }
   section { padding:60px 20px; }
   .about-grid { grid-template-columns:1fr; }
   .financing-grid { grid-template-columns:1fr; }
