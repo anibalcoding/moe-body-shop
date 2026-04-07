@@ -23,13 +23,23 @@ nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
   display:flex; align-items:center; justify-content:space-between;
   padding: 0 40px;
-  height: 70px;
+  height: 90px;
   background: rgba(10,10,10,0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { display:flex; align-items:center; height:100%; overflow:hidden; }
-.nav-logo-img { height:100px; width:auto; display:block; }
+.nav-logo { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; height:100%; gap:2px; }
+.nav-logo-img { height:70px; width:auto; display:block; }
+.nav-logo-location {
+  font-size:9px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase;
+  color: var(--gray); line-height:1;
+}
+.nav-tagline {
+  /* position: absolute; left:50%; transform:translateX(-50%); */
+  font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700;
+  letter-spacing:4px; text-transform:uppercase;
+  color: var(--red); pointer-events:none;
+}
 .nav-links { display:flex; gap:28px; list-style:none; }
 .nav-links a { color: var(--gray-light); font-size:13px; font-weight:500; text-decoration:none; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; }
 .nav-links a:hover { color: var(--red); }
@@ -48,7 +58,7 @@ nav {
   background: linear-gradient(135deg, #0A0A0A 0%, #1a0000 50%, #0A0A0A 100%);
   display:flex; align-items:center; justify-content:center;
   text-align:center;
-  padding: 100px 20px 60px;
+  padding: 120px 20px 60px;
   position: relative;
   overflow: hidden;
 }
@@ -192,30 +202,29 @@ section { padding: 90px 40px; }
   color:var(--white); font-size:14px; padding:10px 24px; margin-top:16px;
 }
 .services-grid {
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:2px;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+  border:1px solid var(--border);
 }
 .service-card {
-  background: var(--black-light); padding:32px 28px;
+  background: var(--black-light); padding:22px 24px;
   border:1px solid var(--border);
-  transition: all 0.25s;
-  position:relative; overflow:hidden;
+  transition: background 0.2s;
+  display:flex; align-items:center; gap:16px;
+  position:relative;
 }
-.service-card::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
-  background: var(--red); transform:scaleX(0); transition:transform 0.25s;
+.service-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+  background: var(--red); transform:scaleY(0); transition:transform 0.2s;
 }
-.service-card:hover { background: rgba(204,0,0,0.06); transform:translateY(-3px); }
-.service-card:hover::after { transform:scaleX(1); }
-.service-num {
-  font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700;
-  color:var(--red); letter-spacing:2px; margin-bottom:10px;
-}
-.service-icon { font-size:28px; margin-bottom:12px; }
+.service-card:hover { background: rgba(204,0,0,0.05); }
+.service-card:hover::before { transform:scaleY(1); }
+.service-icon { font-size:22px; flex-shrink:0; }
+.service-text { flex:1; }
 .service-name {
-  font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700;
-  text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;
+  font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px;
 }
-.service-desc { color:var(--gray); font-size:13px; line-height:1.6; }
+.service-desc { color:var(--gray); font-size:12px; line-height:1.5; }
 
 /* ── FINANCING ── */
 #financing { background: var(--black-mid); }
@@ -357,6 +366,20 @@ footer {
 @keyframes fadeDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
 
 /* ── RESPONSIVE ── */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.services-show-more { display:none; }
+.btn-show-more {
+  background: transparent; border: 1px solid var(--red); color: var(--red);
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px;
+  letter-spacing: 2px; text-transform: uppercase; padding: 12px 32px;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-show-more:hover { background: var(--red); color: #fff; }
+
 @media(max-width:900px) {
   nav { padding:0 20px; }
   .nav-links { display:none; }
@@ -366,4 +389,11 @@ footer {
   .financing-grid { grid-template-columns:1fr; }
   .contact-grid { grid-template-columns:1fr; }
   .form-row { grid-template-columns:1fr; }
+  .service-card--extra { display:none; }
+  .service-card--extra.visible { display:flex; }
+  .services-show-more { display:flex; justify-content:center; margin-top:16px; }
+}
+
+@media(max-width:985px) {
+  .nav-tagline { display:none; }
 }

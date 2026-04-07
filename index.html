@@ -11,7 +11,11 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><img src="logo.JPEG" alt="Moe Body Shop Logo" class="nav-logo-img"/></div>
+  <div class="nav-logo">
+    <img src="logo-moe.png" alt="Moe Body Shop Logo" class="nav-logo-img"/>
+    <div class="nav-logo-location">Grand Prairie, Texas</div>
+  </div>
+  <div class="nav-tagline">Your Ride. Our Pride.</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -35,7 +39,7 @@
       <a href="#services" class="btn-secondary">View All Services</a>
     </div>
     <div class="hero-badges">
-      <div class="badge"><div class="badge-icon">🚛</div><div class="badge-label">Free Towing</div><div class="badge-value">With Every Repair</div></div>
+      <div class="badge"><div class="badge-icon">🚛</div><div class="badge-label">Free Towing</div><div class="badge-value">If Local</div></div>
       <div class="badge"><div class="badge-icon">💳</div><div class="badge-label">Financing</div><div class="badge-value">No Credit Check</div></div>
       <div class="badge"><div class="badge-icon">📞</div><div class="badge-label">Bilingual</div><div class="badge-value">Se Habla Español</div></div>
       <div class="badge"><div class="badge-icon">⭐</div><div class="badge-label">Certified</div><div class="badge-value">I-CAR Gold</div></div>
@@ -46,12 +50,12 @@
 <!-- TOWING BANNER -->
 <div class="towing-banner">
   <div class="towing-track">
-    <span>🚛 FREE TOWING WITH EVERY REPAIR</span>
+    <span>🚛 FREE TOWING IF LOCAL</span>
     <span>🔧 I-CAR GOLD CERTIFIED TECHNICIANS</span>
     <span>💳 NO CREDIT CHECK FINANCING</span>
     <span>🇲🇽 SE HABLA ESPAÑOL</span>
     <span>🚗 WE PAY YOUR DEDUCTIBLE UP TO $1,500</span>
-    <span>🚛 FREE TOWING WITH EVERY REPAIR</span>
+    <span>🚛 FREE TOWING IF LOCAL</span>
     <span>🔧 I-CAR GOLD CERTIFIED TECHNICIANS</span>
     <span>💳 NO CREDIT CHECK FINANCING</span>
     <span>🇲🇽 SE HABLA ESPAÑOL</span>
@@ -95,18 +99,22 @@
       <p class="services-subtext">From collision damage to engine overhauls, our I-CAR Gold certified technicians handle it all with precision and care.</p>
       <div class="services-insurance"><strong>We work with insurance companies</strong> — we pay your deductible up to $1,500.</div>
     </div>
-    <div class="services-grid">
-      <div class="service-card"><div class="service-num">01</div><div class="service-icon">🚗</div><div class="service-name">Collision Repair</div><div class="service-desc">Full structural and cosmetic collision restoration to manufacturer specifications.</div></div>
-      <div class="service-card"><div class="service-num">02</div><div class="service-icon">💨</div><div class="service-name">Air Bag Repair</div><div class="service-desc">Airbag module replacement and steering column restoration for your safety.</div></div>
-      <div class="service-card"><div class="service-num">03</div><div class="service-icon">🔧</div><div class="service-name">Bumper Repair</div><div class="service-desc">Expert front and rear bumper repair, replacement, and color matching.</div></div>
-      <div class="service-card"><div class="service-num">04</div><div class="service-icon">🎨</div><div class="service-name">Paint Services</div><div class="service-desc">OEM-matched paint blending and full custom paint jobs with a flawless finish.</div></div>
-      <div class="service-card"><div class="service-num">05</div><div class="service-icon">⚡</div><div class="service-name">Fiberglass Repair</div><div class="service-desc">Precision fiberglass crack, break, and restoration work on any panel.</div></div>
-      <div class="service-card"><div class="service-num">06</div><div class="service-icon">🛠️</div><div class="service-name">Aluminum Repair</div><div class="service-desc">Specialized aluminum panel repair and restoration using proper tools and approved procedures.</div></div>
-      <div class="service-card"><div class="service-num">07</div><div class="service-icon">🪟</div><div class="service-name">Glass Installation</div><div class="service-desc">Windshield, door, and rear glass replacement with OEM-grade materials.</div></div>
-      <div class="service-card"><div class="service-num">08</div><div class="service-icon">⚙️</div><div class="service-name">Mechanical Repair</div><div class="service-desc">Brakes, suspension, steering, and all general mechanical services.</div></div>
-      <div class="service-card"><div class="service-num">09</div><div class="service-icon">🔩</div><div class="service-name">Engine Repair</div><div class="service-desc">Full engine diagnostics, rebuilds, and replacement by certified technicians.</div></div>
-      <div class="service-card"><div class="service-num">10</div><div class="service-icon">🔄</div><div class="service-name">Transmission Repair</div><div class="service-desc">Automatic and manual transmission service, rebuild, and replacement.</div></div>
-      <div class="service-card"><div class="service-num">11</div><div class="service-icon">🌨️</div><div class="service-name">Hail Damage</div><div class="service-desc">Paintless dent repair and full hail damage restoration on all vehicle types.</div></div>
+    <div class="services-grid" id="servicesGrid">
+      <div class="service-card"><div class="service-icon">🚗</div><div class="service-text"><div class="service-name">Collision Repair</div><div class="service-desc">Full structural and cosmetic collision restoration to manufacturer specifications.</div></div></div>
+      <div class="service-card"><div class="service-icon">💨</div><div class="service-text"><div class="service-name">Air Bag Repair</div><div class="service-desc">Airbag module replacement and steering column restoration for your safety.</div></div></div>
+      <div class="service-card"><div class="service-icon">🔧</div><div class="service-text"><div class="service-name">Bumper Repair</div><div class="service-desc">Expert front and rear bumper repair, replacement, and color matching.</div></div></div>
+      <div class="service-card"><div class="service-icon">🎨</div><div class="service-text"><div class="service-name">Paint Services</div><div class="service-desc">OEM-matched paint blending and full custom paint jobs with a flawless finish.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">⚡</div><div class="service-text"><div class="service-name">Fiberglass Repair</div><div class="service-desc">Precision fiberglass crack, break, and restoration work on any panel.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">🛠️</div><div class="service-text"><div class="service-name">Aluminum Repair</div><div class="service-desc">Specialized aluminum panel repair and restoration using proper tools and approved procedures.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">🪟</div><div class="service-text"><div class="service-name">Glass Installation</div><div class="service-desc">Windshield, door, and rear glass replacement with OEM-grade materials.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">⚙️</div><div class="service-text"><div class="service-name">Mechanical Repair</div><div class="service-desc">Brakes, suspension, steering, and all general mechanical services.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">🔩</div><div class="service-text"><div class="service-name">Engine Repair</div><div class="service-desc">Full engine diagnostics, rebuilds, and replacement by certified technicians.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">🔄</div><div class="service-text"><div class="service-name">Transmission Repair</div><div class="service-desc">Automatic and manual transmission service, rebuild, and replacement.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">🌨️</div><div class="service-text"><div class="service-name">Hail Damage</div><div class="service-desc">Paintless dent repair and full hail damage restoration on all vehicle types.</div></div></div>
+      <div class="service-card service-card--extra"><div class="service-icon">🚛</div><div class="service-text"><div class="service-name">Semi Truck Body Work</div><div class="service-desc">Full semi truck and commercial vehicle body repair, cab restoration, and OEM-matched paint for big rigs.</div></div></div>
+    </div>
+    <div class="services-show-more" id="servicesShowMore">
+      <button class="btn-show-more" onclick="toggleServices()">Show All Services ▾</button>
     </div>
   </div>
 </section>
@@ -131,9 +139,9 @@
         <button class="btn-finance" onclick="openModal()">Apply — Contact Us</button>
       </div>
       <div class="financing-card">
-        <div class="financing-brand">America First Finance</div>
+        <div class="financing-brand">American First Finance</div>
         <div class="financing-type">Retail installment contracts</div>
-        <p class="financing-desc">America First Finance offers installment-based financing plans to help customers manage repair costs over time. Straightforward, transparent terms with a simple application process.</p>
+        <p class="financing-desc">American First Finance offers installment-based financing plans to help customers manage repair costs over time. Straightforward, transparent terms with a simple application process.</p>
         <ul class="financing-perks">
           <li><strong>Fixed monthly payments</strong></li>
           <li>Available for <strong>all credit ranges</strong></li>
@@ -215,7 +223,7 @@
           <div class="contact-icon">🚛</div>
           <div>
             <div class="contact-label">Free Towing</div>
-            <div class="contact-value">Included With Every Repair</div>
+            <div class="contact-value">If Local, With Every Repair</div>
             <div class="contact-sub">We come to you — just call ahead</div>
           </div>
         </div>
@@ -255,6 +263,7 @@
               <option>Engine Repair</option>
               <option>Transmission Repair</option>
               <option>Hail Damage</option>
+              <option>Semi Truck Body Work</option>
               <option>Other</option>
             </select>
           </div>
@@ -302,6 +311,7 @@
           <option>Glass Installation</option>
           <option>Mechanical Repair</option>
           <option>Hail Damage</option>
+          <option>Semi Truck Body Work</option>
           <option>Other</option>
         </select>
       </div>
