@@ -45,11 +45,17 @@ if ($financing) $body .= "Financing: {$financing}\n";
 if ($service)   $body .= "Service:   {$service}\n";
 if ($message)   $body .= "\nMessage:\n{$message}\n";
 
-$headers  = "From: noreply@moebodyshop.com\r\n";
+$fromDomain = $_SERVER['HTTP_HOST'] ?? 'moebodyshop.com';
+$headers  = "From: Moe Body Shop <noreply@{$fromDomain}>\r\n";
 $headers .= "Reply-To: {$email}\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-if (mail($to, $subject, $body, $headers)) {
+$sent = mail($to, $subject, $body, $headers);
+error_log("Mail attempt to {$to} — result: " . ($sent ? 'SUCCESS' : 'FAILED') . " — subject: {$subject}");
+
+if ($sent) {
     echo json_encode(['success' => true]);
 } else {
     http_response_code(500);
